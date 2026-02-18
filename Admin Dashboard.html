@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Admin</h2>
+    <ul>
+      <li onclick="showSection('dashboard')">Dashboard</li>
+      <li onclick="showSection('users')">Users</li>
+      <li onclick="showSection('posts')">Posts</li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <h1 id="pageTitle">Dashboard</h1>
+      <span>Welcome, Admin</span>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div id="dashboard" class="section">
+      <div class="cards">
+        <div class="card"><h3>Total Users</h3><p id="userCount">0</p></div>
+        <div class="card"><h3>Total Posts</h3><p id="postCount">0</p></div>
+        <div class="card"><h3>Comments</h3><p>12</p></div>
+      </div>
+    </div>
+
+    <!-- Users Table -->
+    <div id="users" class="section" style="display:none">
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Action</th></tr>
+        </thead>
+        <tbody id="userTable">
+          <tr><td>John</td><td>john@mail.com</td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+          <tr><td>Ana</td><td>ana@mail.com</td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Posts Table -->
+    <div id="posts" class="section" style="display:none">
+      <table>
+        <thead>
+          <tr><th>Title</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody id="postTable">
+          <tr><td>Hello World</td><td>Published</td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+          <tr><td>My Blog</td><td>Draft</td><td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
